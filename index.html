@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A beautiful weather forecast application.">
+    <title>Day 3: Weather App</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="video-background">
+        <!-- Dynamic background will be handled by CSS/JS, starting with a base gradient -->
+    </div>
+
+    <div class="app-container">
+        <!-- Theme Toggle (Bottom Right) -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+            <i class="fas fa-sun"></i>
+        </button>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="city-input" placeholder="Search City..." autocomplete="off">
+                <button id="search-btn">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div id="error-message" class="error-msg hidden">
+                <i class="fas fa-exclamation-triangle"></i> City not found
+            </div>
+        </div>
+
+        <!-- Weather Content (Hidden by default until search) -->
+        <div id="weather-content" class="weather-content hidden">
+
+            <!-- Current Weather Card -->
+            <div class="current-weather">
+                <div class="weather-header">
+                    <h2 id="city-name">--</h2>
+                    <p id="date-time">--</p>
+                </div>
+
+                <div class="weather-main">
+                    <div class="weather-icon-container">
+                        <img id="weather-icon" src="" alt="Weather Icon" class="weather-icon">
+                    </div>
+                    <div class="temp-container">
+                        <h1 id="temperature">--°</h1>
+                        <p id="weather-desc">--</p>
+                    </div>
+                </div>
+
+                <div class="weather-details-grid">
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <div class="detail-info">
+                            <span class="label">Wind</span>
+                            <span class="value" id="wind-speed">-- km/h</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-droplet"></i>
+                        <div class="detail-info">
+                            <span class="label">Humidity</span>
+                            <span class="value" id="humidity">--%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecast Section -->
+            <div class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-grid" id="forecast-grid">
+                    <!-- Forecast items will be injected here by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="loading-spinner hidden">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </div>
+
+        <!-- Welcome Message (Initial State) -->
+        <div id="welcome-message" class="welcome-message">
+            <i class="fas fa-cloud-sun-rain welcome-icon"></i>
+            <h2>Weather Forecast</h2>
+            <p>Enter a city name to get the latest weather updates.</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
